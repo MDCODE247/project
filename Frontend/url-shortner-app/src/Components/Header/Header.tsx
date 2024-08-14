@@ -8,7 +8,7 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
     <div className='bg-slate-900'>
         <div className='container p-2 mx-auto'>
             <nav className='py-5'>
-                <div className='text-base text-white'>URL Shortener</div>
+                <div className='text-base text-white text-center'>ALTSCHOOL CAPSTONE PROJECT</div>
             </nav>
         </div>
     </div>

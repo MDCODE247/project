@@ -1,3 +1,5 @@
+
+
 import * as React from 'react';
 import { UrlData } from '../../Interface/UrlData';
 import { Link } from 'react-router-dom';
@@ -6,16 +8,17 @@ import axios from 'axios';
 
 interface IDataTableProps {
    data: UrlData[];
+   updateReloadState: () => void;
 }
 
 const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
- const {data} = props;
+ const {data, updateReloadState} = props;
  console.log('Data in DataTable is ', data);
     const renderTableData = () => {
         return data.map((item) => {
             return(
                 <tr key={item._id} 
-                className='border-b text-white bg-gray-600 hover:bg-white hover:text-gray-800'>
+                className='border-b text-white bg-slate-950 hover:bg-slate-400 hover:text-gray-800'>
                     <td className='px-6 py-3 break-words'>
                         <Link to={`${serverUrl}/{item.fullUrl}`} target='_blank' rel='noreferrer noopener'>
                             {item.fullUrl}
@@ -58,13 +61,14 @@ const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
         alert(`URL copied: ${serverUrl}/shortUrl/${url}`)
         
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
  }
 
  const deleteUrl = async (id:string) => {
     const response = await axios.delete(`${serverUrl}/shortUrl/${id}`);
     console.log(response)
+    updateReloadState();
  };
     return (
     <div className='container mx-auto pt-2 pb-10'>
@@ -82,7 +86,7 @@ const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
                             Clicks
                         </th>
                         <th scope='col' className='px-6 py-3'>
-                            Action
+                            Copy/Delete
                         </th>
                    
                    
