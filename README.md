@@ -12,3 +12,5 @@ Brief is the new black, this is what inspires the team at Scissor. In today’s 
 - Analytics: Scissor provides basic analytics that allows users to track their shortened URL's performance. Users can see how many clicks their shortened URL has received and where the clicks are coming from. We need to track when a URL is used.
 
 
+run npm start to run backend
+run npm run dev to run frontend
