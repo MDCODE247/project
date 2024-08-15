@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-// interface IHeaderProps {
-// }
+interface IHeaderProps {
+ }
 
 const Header: React.FunctionComponent<IHeaderProps> = () => {
   return (
