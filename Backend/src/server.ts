@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
 	cors({
-		origin: ["https://shorturl-ai6y.onrender.com", "http://localhost:3000"],
+		origin: ["https://my-project-o7bve62yb-mohammed-abubakar-s-projects.vercel.app", "http://localhost:3000"],
 		credentials: true,
 	})
 );
