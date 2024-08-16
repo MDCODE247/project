@@ -26,7 +26,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // };
 // export default connectDb
 const mongoose_1 = __importDefault(require("mongoose"));
-require("dotenv/config");
+const dotenv_1 = __importDefault(require("dotenv"));
+const path_1 = __importDefault(require("path"));
+dotenv_1.default.config({
+    path: path_1.default.resolve(process.cwd(), ".env"),
+});
 // Log the environment variable to confirm it's being read
 console.log("MongoDB connection string:", process.env.CONNECTION_STRING);
 const connectDb = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -38,7 +42,7 @@ const connectDb = () => __awaiter(void 0, void 0, void 0, function* () {
             console.log("Database connected: ", connect.connection.host, connect.connection.name);
         }
         else {
-            throw new Error('MongoDB connection string is not defined in environment variables');
+            throw new Error("MongoDB connection string is not defined in environment variables");
         }
     }
     catch (error) {
