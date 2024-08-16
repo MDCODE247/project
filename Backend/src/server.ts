@@ -16,7 +16,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
 	cors({
-		origin: ["https://my-project-o7bve62yb-mohammed-abubakar-s-projects.vercel.app", "https://my-project-sand-beta.vercel.app/", "http://localhost:3000"],
+		origin: ["https://my-project-o7bve62yb-mohammed-abubakar-s-projects.vercel.app", 
+			"https://my-project-sand-beta.vercel.app", "http://localhost:3000"],
 		credentials: true,
 	})
 );
